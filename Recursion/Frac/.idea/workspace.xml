@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f09b9ca4-163b-4fc5-93ea-f2db58d79aad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Fractals.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641097367364</updated>
-      <workItem from="1641097368713" duration="2095000" />
+      <workItem from="1641097368713" duration="2213000" />
     </task>
     <servers />
   </component>
