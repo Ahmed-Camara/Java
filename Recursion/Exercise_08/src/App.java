@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        reverseDisplay(12345);
+        reverseDisplay(1223456789);
     }
 
     public static void reverseDisplay(int value){
