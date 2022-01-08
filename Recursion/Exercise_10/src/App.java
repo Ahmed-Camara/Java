@@ -1,9 +1,15 @@
-
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        System.out.println(count("Welcome",'e'));
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = input.nextLine();
+        System.out.print("Enter a character: ");
+        char c = input.nextLine().charAt(0);
+
+        System.out.println("The character "+c+" occurs "+count(str, c)+" times in the string "+str);
     }
 
     public static int count(String str, char a){
@@ -11,7 +17,7 @@ public class App {
     }
 
     public static int count(String str, char a , int index,int res){
-        
+
         if(str.equals(""))
             return res;
         String low = str.toLowerCase();
