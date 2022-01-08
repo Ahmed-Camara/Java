@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) {
         //call recursive function
-        reverseDisplay("Ahmed");
+        reverseDisplay("abcd");
     }
     public static void reverseDisplay(String value){
 
