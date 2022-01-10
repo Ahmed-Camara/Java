@@ -30,7 +30,6 @@ public class MazeGUI extends BorderPane {
     }
 
     public void drawMaze(){
-        System.out.println("drawMaze");
         gridPaneMaze = new GridPane();
 
         for(int i = 0; i < maze.length; i++){
@@ -75,7 +74,7 @@ public class MazeGUI extends BorderPane {
             return;
         }
         if(color.equals(Color.WHITE)){
-            rec.setFill(Color.BLACK);
+            rec.setFill(Color.RED);
             maze[row][cols] = 'X';
         }else{
             rec.setFill(Color.WHITE);
