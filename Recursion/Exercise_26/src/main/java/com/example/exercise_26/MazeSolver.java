@@ -66,11 +66,8 @@ public class MazeSolver {
     public boolean isValidPath(int row, int col){
         if (row < 0 || row >= maze.length) { return false; }
         if (col < 0 || col >= maze[0].length) { return false; }
-        // illegal for a space to have a wall
         if (maze[row][col] == 'X') { return false; }
-        // illegal for a space to already be marked as part of the path
         if (maze[row][col] == '@') { return false; }
-        // illegal for a space to complete a square of four marked spaces
         if (row > 0 && col < maze[0].length - 1 &&
                 maze[row - 1][col] == '@' &&
                 maze[row - 1][col + 1] == '@' &&
