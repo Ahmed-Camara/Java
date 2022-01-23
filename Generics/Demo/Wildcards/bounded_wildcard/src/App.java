@@ -8,7 +8,7 @@ public class App {
         s1.push(1);
         s1.push(2);
         s1.push(-2);
-
+        s1.push(4);
         System.out.println("The maximum number in the stack is : "+max(s1));
         sum(Arrays.asList(1,2,-2));
         sum(Arrays.asList(2.5,6.5));
