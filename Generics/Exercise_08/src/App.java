@@ -7,8 +7,10 @@ public class App {
             list.add(i);
         }
 
+        System.out.println("Original list : ");
+        System.out.println(list);
+        System.out.println("Shuffled list : ");
         shuffle(list);
-
         System.out.println(list);
     }
 
