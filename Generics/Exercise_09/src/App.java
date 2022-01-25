@@ -1,20 +1,19 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<Integer> p = new ArrayList<>();
-        p.add(12);
-        p.add(2);
-        p.add(32);
-        p.add(4);
-        p.add(52);
-        p.add(53);
-        p.add(54);
-        p.add(55);
-        System.out.println(p);
-        sort(p);
+        ArrayList<Integer> list = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
 
-        System.out.println(p);
+        for(int i = 0; i < 10; i++){
+            list.add(input.nextInt());
+        }
+        System.out.println("Before Sorting : ");
+        System.out.println(list);
+        sort(list);
+        System.out.println("After Sorting : ");
+        System.out.println(list);
     }
 
     public static <E extends Comparable<E>> void sort(ArrayList<E> list){
