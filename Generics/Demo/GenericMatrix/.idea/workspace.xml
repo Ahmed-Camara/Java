@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f87e375b-4f36-4aa3-9d93-47765a02d1c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GenericMatrix.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GenericMatrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IntegerMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Wildcards/lower_bound_wildcard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Wildcards/lower_bound_wildcard/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Recursion/Exercise_26" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -64,7 +57,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642956821729</updated>
-      <workItem from="1642956822858" duration="2893000" />
+      <workItem from="1642956822858" duration="2926000" />
+      <workItem from="1642959992927" duration="100000" />
+      <workItem from="1643082952072" duration="192000" />
     </task>
     <servers />
   </component>
