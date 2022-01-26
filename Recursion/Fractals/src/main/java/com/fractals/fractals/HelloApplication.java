@@ -32,7 +32,7 @@ public class HelloApplication extends Application {
         borderPane.setBottom(hbox);
 
         Scene scene = new Scene(borderPane, 320, 240);
-        stage.setTitle("Sierpinski Triangle");
+        stage.setTitle("Sierpinski Triangle Solver");
         stage.setScene(scene);
         stage.show();
 
