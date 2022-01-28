@@ -47,7 +47,7 @@ public class App extends Application {
         pane.setBottom(hBox);
 
         Scene scene = new Scene(pane, 320, 240);
-        stage.setTitle("Multiple Bouncing Ball");
+        stage.setTitle("Multiple Bouncing Balls");
         stage.setScene(scene);
         stage.show();
     }
