@@ -17,11 +17,9 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.IOException;
-
 public class App extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage){
         MultipleBallPlane ballPlane = new MultipleBallPlane();
         ballPlane.setStyle("-fx-border-color: yellow");
 
@@ -49,7 +47,7 @@ public class App extends Application {
         pane.setBottom(hBox);
 
         Scene scene = new Scene(pane, 320, 240);
-        stage.setTitle("Multiple Bounce Ball");
+        stage.setTitle("Multiple Bouncing Ball");
         stage.setScene(scene);
         stage.show();
     }
@@ -58,8 +56,8 @@ public class App extends Application {
         launch();
     }
 
-    private class MultipleBallPlane extends Pane{
-        private Timeline animation;
+    private static class MultipleBallPlane extends Pane{
+        private final Timeline animation;
 
         public MultipleBallPlane(){
             animation = new Timeline(new KeyFrame(Duration.millis(50), e->moveBall()));
@@ -112,7 +110,7 @@ public class App extends Application {
 
     }
 
-    class Ball extends Circle{
+    static class Ball extends Circle{
         private double dx=1,dy=1;
         public Ball(double x, double y, double radius, Color color){
             super(x,y,radius);
