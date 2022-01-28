@@ -12,7 +12,7 @@ public class App{
         File file = new File(args[0]);
 
         if(!file.exists()){
-            System.out.println("File does not exit");
+            System.out.println("File entered does not exit");
             System.exit(2);
         }
         if(!file.isFile()){
