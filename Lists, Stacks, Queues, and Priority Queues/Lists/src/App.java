@@ -54,9 +54,6 @@ public class App {
         while (listIterator.hasPrevious()){
             System.out.print(listIterator.previous()+" ");
         }
-
         System.out.println();
-
-
     }
 }
