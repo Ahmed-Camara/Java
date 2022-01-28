@@ -36,6 +36,14 @@ public class App {
         System.out.println("Cities in collection 1 or collection 2 : ");
         System.out.println(c1);
 
+
+        c1 = (ArrayList<String>)(collection1.clone());
+        c1.retainAll(collection2);
+        System.out.println();
+        System.out.println("Cities in collection 1 and collection 2 : ");
+        System.out.println(c1);
+
+
         c1 = (ArrayList<String>) (collection1.clone());
         c1.removeAll(collection2);
 
