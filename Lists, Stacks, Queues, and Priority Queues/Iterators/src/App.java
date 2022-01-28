@@ -7,8 +7,30 @@
     and the remove() method to remove the last element returned by the iterator.
 * */
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Locale;
+
 public class App {
     public static void main(String[] args) {
+        Collection<String> collection = new ArrayList<>();
+        collection.add("New York");
+        collection.add("Atlanta");
+        collection.add("Dallas");
+         collection.add("Madison");
 
+        Iterator<String> iterator = collection.iterator();
+
+        while (iterator.hasNext()){
+            System.out.print(iterator.next().toUpperCase()+" ");
+        }
+        System.out.println();
+
+        //We can also traverse a collection without using an iterator, we can only use a foreach loop:
+
+        for(String element : collection){
+            System.out.print(element.toUpperCase()+" ");
+        }
     }
 }
