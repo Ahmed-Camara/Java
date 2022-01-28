@@ -16,7 +16,7 @@ public class App{
             System.exit(2);
         }
         if(!file.isFile()){
-            System.out.println("File name entered is not a valid file");
+            System.out.println("File name given is not a valid file");
             System.exit(3);
         }
 
