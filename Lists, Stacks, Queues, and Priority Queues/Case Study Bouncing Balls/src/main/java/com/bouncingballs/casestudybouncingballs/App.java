@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
@@ -94,7 +95,19 @@ public class App extends Application {
         }
 
         protected void moveBall(){
+            for (Node node : this.getChildren()){
+                Ball ball = (Ball) node;
+                if(ball.getCenterX() < ball.getRadius() || ball.getCenterX() > getWidth()-ball.getRadius()){
+                    ball.dx *= -1;
+                }
 
+                if(ball.getCenterY() < ball.getRadius() || ball.getCenterY() > getHeight() - ball.getRadius()){
+                    ball.dy *= -1;
+                }
+
+                ball.setCenterX(ball.dx + ball.getCenterX());
+                ball.setCenterY(ball.dy + ball.getCenterY());
+            }
         }
 
     }
