@@ -16,5 +16,47 @@
         . set(element : E) : void => replace last element returned by the previous or next method with the specified element.
 * */
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
 public class App {
+    public static void main(String[] args) {
+        List<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(1);
+        arrayList.add(4);
+        arrayList.add(0,10);
+        arrayList.add(3,30);
+
+        System.out.println("List of integers : ");
+        System.out.println(arrayList);
+
+        LinkedList<Object> linkedList = new LinkedList<>(arrayList);
+
+        linkedList.add(1,"red");
+        linkedList.removeLast();
+        linkedList.addFirst("Green");
+
+        System.out.println("Display the linked list forward : ");
+        ListIterator<Object> listIterator = linkedList.listIterator();
+        while (listIterator.hasNext()){
+            System.out.print(listIterator.next()+" ");
+        }
+
+        System.out.println();
+
+        System.out.println("Display the linked list backward : ");
+        listIterator = linkedList.listIterator(linkedList.size());
+        while (listIterator.hasPrevious()){
+            System.out.print(listIterator.previous()+" ");
+        }
+
+        System.out.println();
+
+
+    }
 }
