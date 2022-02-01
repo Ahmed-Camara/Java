@@ -25,7 +25,6 @@ public class App {
         if(tab[x] != -1)
             return tab[x];
 
-        tab[x] = x * factorial(x-1,tab);
-        return tab[x];
+        return x * factorial(x-1,tab);
     }
 }
