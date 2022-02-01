@@ -17,7 +17,6 @@ public class App {
         return q;
     }
     public static int memoizedRodCut(int[] p, int n){
-
         int[] r = new int[n+1];
         for (int i = 0; i <= n; i++){
             r[i] = Integer.MIN_VALUE;
