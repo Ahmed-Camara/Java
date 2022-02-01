@@ -23,7 +23,7 @@ public class App {
     }
     public static int dpFib(int[]tab,int x){
         countDP++;
-        if(x< 2)
+        if(x<=1)
             return x;
         if(tab[x] != -1)
             return tab[x];
