@@ -7,8 +7,6 @@ public class App {
         numTest = in.nextInt();
         long []tab = new long[numTest+1];
 
-        for (int i = 0; i < tab.length; i++)
-            tab[i] = -1;
         long []res = new long[numTest+1];
         for (int i = 0; i < numTest; i++){
             res[i] = factorial(i+1,tab);
@@ -22,7 +20,7 @@ public class App {
         if(x <= 2)
             return x;
 
-        if(tab[x] != -1)
+        if(tab[x] != 0)
             return tab[x];
 
         return x * factorial(x-1,tab);
