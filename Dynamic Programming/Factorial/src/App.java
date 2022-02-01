@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class App {
-    private static long []tab = new long[50];
+    private static long []tab = new long[100];
     public static void main(String[] args) {
         int numTest;
         Scanner in = new Scanner(System.in);
