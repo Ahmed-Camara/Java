@@ -5,11 +5,11 @@ public class App {
         int numTest;
         Scanner in = new Scanner(System.in);
         numTest = in.nextInt();
-        int []tab = new int[numTest+1];
+        long []tab = new long[numTest+1];
 
         for (int i = 0; i < tab.length; i++)
             tab[i] = -1;
-        int []res = new int[numTest+1];
+        long []res = new long[numTest+1];
         for (int i = 0; i < numTest; i++){
             res[i] = factorial(i+1,tab);
         }
@@ -18,7 +18,7 @@ public class App {
             System.out.println(res[i]);
         }
     }
-    public static int factorial(int x,int[] tab){
+    public static long factorial(int x,long[] tab){
         if(x <= 2)
             return x;
 
