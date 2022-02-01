@@ -7,6 +7,8 @@ public class App {
         System.out.println("Function has been called without using DP : "+count+" times"); // 331160281 times
         System.out.println(dpFib(40));
         System.out.println("Function has been called with using DP : "+countDP+" times"); // 79 times
+
+
     }
 
     public static int fib(int x){
@@ -19,6 +21,7 @@ public class App {
     public static int dpFib(int x){
         int tab[] = new int[MAX];
         initialization(tab);
+
         return dpFib(tab,x);
     }
     public static int dpFib(int[]tab,int x){
