@@ -2,7 +2,7 @@ public class App {
     public static void main(String[] args) {
         int[] p = {1, 5, 8, 9, 10, 17, 17, 20};
         int n = 4;
-        
+
         System.out.println(rodCutt(p,n));
         System.out.println(memoizedRodCut(p,n));
     }

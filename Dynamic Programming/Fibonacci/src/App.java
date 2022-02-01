@@ -4,9 +4,9 @@ public class App {
     private static int countDP = 0;
     public static void main(String[] args) {
         System.out.println(fib(40));
-        System.out.println("Function has been called without using DP : "+count+" times"); // 331160281 times
+        System.out.println("Function has been called without using DP : "+count+" times"); //output : 331160281 times
         System.out.println(dpFib(40));
-        System.out.println("Function has been called with using DP : "+countDP+" times"); // 79 times
+        System.out.println("Function has been called with using DP : "+countDP+" times"); //output :  79 times
 
 
     }
