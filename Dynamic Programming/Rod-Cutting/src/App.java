@@ -1,9 +1,10 @@
 public class App {
     public static void main(String[] args) {
         int[] p = {1, 5, 8, 9, 10, 17, 17, 20};
-        int size = 4;
-        System.out.println(rodCutt(p,size));
-        System.out.println(memoizedRodCut(p,size));
+        int n = 4;
+        
+        System.out.println(rodCutt(p,n));
+        System.out.println(memoizedRodCut(p,n));
     }
 
     public static int rodCutt(int[]p, int n){
@@ -11,7 +12,7 @@ public class App {
             return 0;
         int q = Integer.MIN_VALUE;
         for (int i = 1; i <= n; i++){
-            q = Math.max(q,p[i] + rodCutt(p,n-i));
+            q = Math.max(q,p[i-1] + rodCutt(p,n-i));
         }
         return q;
     }
@@ -34,7 +35,7 @@ public class App {
         else{
             q = Integer.MIN_VALUE;
             for(int i = 1; i <= n; i++){
-                q = Math.max(q,p[i]+memoizedRodCut(p,n-i,r));
+                q = Math.max(q,p[i-1]+memoizedRodCut(p,n-i,r));
             }
         }
 
