@@ -9,7 +9,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage){
         Scene scene = new Scene(new GUI(), 400, 240);
-        stage.setTitle("Exercise 02");
+        stage.setTitle("Exercise 02 ");
         stage.setScene(scene);
         stage.show();
     }
