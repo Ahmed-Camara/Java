@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        int arr[] = new int[] { 1, 2, 3, 4 };
+        int arr[] = new int[] { 1, 2, 3, 4, 3 };
         System.out.println("Minimum number of multiplications is "
                 + memoizedMatrixChain(arr));
     }
@@ -33,9 +33,6 @@ public class App {
                     m[i][j] = q;
             }
         }
-
-
-
         return m[i][j];
     }
 }
