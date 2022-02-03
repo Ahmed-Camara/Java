@@ -20,30 +20,32 @@ public class App {
         String[] tokens = expression.split(" ");
 
         for(String token : tokens){
-            if(token.length() == 0) continue;
-            else if(token.charAt(0) == '+' || token.charAt(0) == '-'){
-                // procees all the operators at the top of operatorStack
-                while (!operatorStack.isEmpty() && (operatorStack.peek() == '+' || operatorStack.peek() == '-'||
-                        operatorStack.peek() == '*' || operatorStack.peek() == '/')){
-                    processAnOperator(operandStack,operatorStack);
-                }
-                operatorStack.push(token.charAt(0));
+            if(token.length() != 0){
+                if(token.charAt(0) == '+' || token.charAt(0) == '-'){
+                    // procees all the operators at the top of operatorStack
+                    while (!operatorStack.isEmpty() && (operatorStack.peek() == '+' || operatorStack.peek() == '-'||
+                            operatorStack.peek() == '*' || operatorStack.peek() == '/')){
+                        processAnOperator(operandStack,operatorStack);
+                    }
+                    operatorStack.push(token.charAt(0));
 
-            }else if(token.charAt(0) == '*' || token.charAt(0) == '/'){
-                while (!operatorStack.isEmpty() && (operatorStack.peek() == '*' || operatorStack.peek() == '/')){
-                    processAnOperator(operandStack,operatorStack);
+                }else if(token.charAt(0) == '*' || token.charAt(0) == '/'){
+                    while (!operatorStack.isEmpty() && (operatorStack.peek() == '*' || operatorStack.peek() == '/')){
+                        processAnOperator(operandStack,operatorStack);
+                    }
+                    operatorStack.push(token.charAt(0));
+                }else if(token.trim().charAt(0) == '('){
+                    operatorStack.push('(');
+                }else if(token.trim().charAt(0) == ')'){
+                    while (operatorStack.peek() != '('){
+                        processAnOperator(operandStack,operatorStack);
+                    }
+                    operatorStack.pop();
+                }else{
+                    operandStack.push(Integer.valueOf(token));
                 }
-                operatorStack.push(token.charAt(0));
-            }else if(token.trim().charAt(0) == '('){
-                operatorStack.push('(');
-            }else if(token.trim().charAt(0) == ')'){
-                while (operatorStack.peek() != '('){
-                    processAnOperator(operandStack,operatorStack);
-                }
-                operatorStack.pop();
-            }else{
-                operandStack.push(Integer.valueOf(token));
             }
+
         }
 
         while (!operatorStack.isEmpty()){
