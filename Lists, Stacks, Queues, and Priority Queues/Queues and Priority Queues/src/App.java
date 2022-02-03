@@ -12,8 +12,21 @@
 * Deque supports insertion and removal at both ends.
 * Deque has additional methods : addFirst(e),removeFirst(),addLast(e),removeLast(),getFirst() and getLast()
 * */
+import java.util.LinkedList;
+import java.util.Queue;
 public class App {
     public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+        queue.offer("Abidjan");
+        queue.offer("Indiana");
+        queue.offer("Georgia");
+        queue.offer("Texas");
+        displayQueue(queue);
+    }
 
+    public static void displayQueue(Queue<String> queue){
+        while (queue.size() > 0){
+            System.out.print(queue.poll()+" ");
+        }
     }
 }
