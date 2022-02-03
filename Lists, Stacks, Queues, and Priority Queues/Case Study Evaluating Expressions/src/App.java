@@ -42,7 +42,7 @@ public class App {
                 }
                 operatorStack.pop();
             }else{
-                operandStack.push(new Integer(token));
+                operandStack.push(Integer.valueOf(token));
             }
         }
 
