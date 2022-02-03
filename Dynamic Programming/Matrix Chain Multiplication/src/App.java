@@ -26,7 +26,7 @@ public class App {
             m[i][j] = 0;
 
         else{
-            for (int k = i; k < j-1; k++){
+            for (int k = i; k <= j-1; k++){
                 int q = lookupChain(m,p,i,k) + lookupChain(m,p,k+1,j)+p[i-1] * p[k] * p[j];
 
                 if(q < m[i][j])
