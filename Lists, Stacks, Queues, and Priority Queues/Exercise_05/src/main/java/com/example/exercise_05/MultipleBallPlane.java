@@ -51,15 +51,12 @@ public class MultipleBallPlane extends Pane {
             ball.setCenterX(ball.dx + ball.getCenterX());
             ball.setCenterY(ball.dy + ball.getCenterY());
 
-            if (this.getChildren().size() > 1){
-                for (int j = 0; j < this.getChildren().size() - 1; j++){
-                    Ball ball1 = (Ball) this.getChildren().get(j);
-                    Ball ball2 = (Ball) this.getChildren().get(j+1);
-
-                    if(ball1.getBoundsInParent().intersects(ball2.getBoundsInParent())){
-                        ball1.setRadius(ball1.getRadius() + ball2.getRadius());
-                        substract();
-                    }
+            ArrayList<Node> list = new ArrayList<>(this.getChildren());
+            for(int j = getChildren().indexOf(ball)+1 ; j < list.size(); j++){
+                Ball nextBall = (Ball) list.get(j);
+                if(ball.getBoundsInParent().intersects(nextBall.getBoundsInParent())){
+                    ball.setRadius(ball.getRadius() + nextBall.getRadius());
+                    getChildren().remove(nextBall);
                 }
             }
         }

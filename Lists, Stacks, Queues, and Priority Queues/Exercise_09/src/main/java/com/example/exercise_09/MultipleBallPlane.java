@@ -75,7 +75,7 @@ public class MultipleBallPlane extends Pane {
                     getChildren().remove(nextBall);
                 }
             }
-            
+
         }
     }
 
