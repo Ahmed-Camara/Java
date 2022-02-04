@@ -16,6 +16,7 @@ public class MultipleBallPlane extends Pane {
     private Timeline animation = null;
     private PriorityQueue<Ball> pq = null;
     public MultipleBallPlane(){
+
         pq = new PriorityQueue<>(6, new Comparator<Ball>() {
             @Override
             public int compare(Ball o1, Ball o2) {
