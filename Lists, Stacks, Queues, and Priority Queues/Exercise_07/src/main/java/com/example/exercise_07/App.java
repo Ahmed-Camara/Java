@@ -14,6 +14,7 @@ public class App extends Application {
         stage.setTitle("hangman");
         stage.setScene(scene);
         stage.show();
+        hangman.requestFocus();
     }
 
     public static void main(String[] args) {
