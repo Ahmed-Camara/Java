@@ -3,6 +3,7 @@ package com.example.exercise_05;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
+import javafx.event.Event;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -50,23 +51,27 @@ public class MultipleBallPlane extends Pane {
             ball.setCenterX(ball.dx + ball.getCenterX());
             ball.setCenterY(ball.dy + ball.getCenterY());
 
+            if (this.getChildren().size() > 1){
+                for (int j = 0; j < this.getChildren().size()-1; j++){
+                    Ball ball1 = (Ball) this.getChildren().get(j);
+                    Ball ball2 = (Ball) this.getChildren().get(j+1);
 
-            for (int j = i; j < this.getChildren().size(); j++){
-                if(this.getChildren().size() > 1){
-                    Ball ball2 = (Ball) this.getChildren().get(j);
-
-                    if(ball.getBoundsInParent().intersects(ball2.getBoundsInParent())){
-                        System.out.println("Collision");
+                    if(ball1.getBoundsInParent().intersects(ball2.getBoundsInParent())){
+                        ball1.setRadius(ball1.getRadius() + ball2.getRadius());
+                        substract();
                     }
-                }else{
-                    break;
                 }
             }
         }
     }
 
-    private void detectCollision(){
-
+    public void removeBall(Event e){
+        try {
+            Ball ball = (Ball) e.getTarget();
+            this.getChildren().remove(ball);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     class Ball extends Circle{

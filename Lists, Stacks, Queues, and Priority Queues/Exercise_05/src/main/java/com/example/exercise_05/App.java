@@ -30,7 +30,7 @@ public class App extends Application {
         btSubstract.setOnAction(e->ballPane.substract());
         btSuspend.setOnAction(e->ballPane.suspend());
         btResume.setOnAction(e->ballPane.resume());
-
+        ballPane.setOnMousePressed(e->ballPane.removeBall(e));
         HBox hBox = new HBox(10);
         hBox.setPadding(new Insets(10));
         hBox.setAlignment(Pos.CENTER);
