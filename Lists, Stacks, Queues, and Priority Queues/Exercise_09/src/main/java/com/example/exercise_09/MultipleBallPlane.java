@@ -67,7 +67,7 @@ public class MultipleBallPlane extends Pane {
 
             ball.setCenterX(ball.dx + ball.getCenterX());
             ball.setCenterY(ball.dy + ball.getCenterY());
-            
+
             ArrayList<Node> list = new ArrayList<>(this.getChildren());
             for(int j = getChildren().indexOf(ball)+1 ; j < list.size(); j++){
                 Ball nextBall = (Ball) list.get(j);
