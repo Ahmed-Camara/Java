@@ -10,7 +10,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Hangman hangman = new Hangman();
-        Scene scene = new Scene(hangman, 320, 240);
+        Scene scene = new Scene(hangman);
         stage.setTitle("hangman");
         stage.setScene(scene);
         stage.show();
