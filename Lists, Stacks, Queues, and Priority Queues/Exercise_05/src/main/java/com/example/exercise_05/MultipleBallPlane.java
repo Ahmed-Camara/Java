@@ -52,7 +52,7 @@ public class MultipleBallPlane extends Pane {
             ball.setCenterY(ball.dy + ball.getCenterY());
 
             if (this.getChildren().size() > 1){
-                for (int j = 0; j < this.getChildren().size()-1; j++){
+                for (int j = 0; j < this.getChildren().size() - 1; j++){
                     Ball ball1 = (Ball) this.getChildren().get(j);
                     Ball ball2 = (Ball) this.getChildren().get(j+1);
 
