@@ -19,7 +19,7 @@ public class App {
 
         // Intersection
         q2.retainAll(q1);
-        System.out.println("Intersection: " + q2);
+        System.out.println("Intersection : " + q2);
 
         // Union
         q2.addAll(q1);
