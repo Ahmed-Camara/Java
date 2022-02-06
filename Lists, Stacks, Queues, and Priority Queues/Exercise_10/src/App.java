@@ -23,7 +23,7 @@ public class App {
 
         // Union
         q2.addAll(q1);
-        System.out.println("Union: " + q2);
+        System.out.println("Union : " + q2);
 
         // Difference
         PriorityQueue<String> d = new PriorityQueue<>();
