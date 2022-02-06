@@ -32,6 +32,6 @@ public class App {
         q2 = new PriorityQueue<>(q2);
         q1.removeAll(q2);
         d.addAll(q1);
-        System.out.println("Difference: " + d);
+        System.out.println("Difference : " + d);
     }
 }
