@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Longest Common Subsequence.iml" filepath="$PROJECT_DIR$/Longest Common Subsequence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Catalan Number.iml" filepath="$PROJECT_DIR$/Catalan Number.iml" />
     </modules>
   </component>
 </project>
