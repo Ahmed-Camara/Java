@@ -9,7 +9,7 @@ public class App {
         System.out.println();
         //2. Catalan number with dynamic programming
         for (int i = 0; i < 10; i++){
-            System.out.print(DPcatalanNumber(i)+" ");
+            System.out.print(DPcatalanNumber(i)+"  ");
         }
     }
 
