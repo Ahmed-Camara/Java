@@ -4,7 +4,7 @@ public class App {
 
         //1. Catalan number without dynamic programming
         for (int i = 0; i < 10; i++){
-            System.out.print(catalanNumber(i)+" ");
+            System.out.print(catalanNumber(i)+"  ");
         }
         System.out.println();
         //2. Catalan number with dynamic programming
