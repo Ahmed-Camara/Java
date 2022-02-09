@@ -19,6 +19,7 @@ public class App {
         expression = insertBlanks(expression);
         String[] tokens = expression.split(" ");
 
+
         for(String token : tokens){
             if(token.length() != 0){
                 if(token.charAt(0) == '+' || token.charAt(0) == '-'){

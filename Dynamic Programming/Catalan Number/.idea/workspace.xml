@@ -32,6 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lists, Stacks, Queues, and Priority Queues/Case Study Evaluating Expressions" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -56,6 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1644317622485</updated>
       <workItem from="1644317630599" duration="3155000" />
+      <workItem from="1644376689791" duration="151000" />
+      <workItem from="1644413992974" duration="68000" />
     </task>
     <servers />
   </component>
