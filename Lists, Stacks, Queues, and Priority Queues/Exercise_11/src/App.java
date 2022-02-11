@@ -15,25 +15,33 @@ public class App {
         for (int i = 0; i < expression.length(); i++) {
             char ch = expression.charAt(i);
             if (ch == '(' || ch == '{' || ch == '['){
-                validity = true;
+                validity = false;
                 stack.push(ch);
-            }else if(ch == ')' || ch == '}' || ch == ']' && !processStack(stack,ch)){
+            }else if((ch == ')' || ch == '}' || ch == ']')){
+                if(processStack(stack,ch)){
+                    validity = true;
+                }else{
+                    return false;
+                }
 
-                return false;
             }
         }
-        System.out.println(stack.size());
+        if(stack.size() > 0)
+            return false;
         return validity;
     }
     private static boolean processStack(Stack<Character> stack, char ch){
-        char op = stack.pop();
 
-        if (ch == ')' && op == '(')
-            return true;
-        else if (ch == '}' && op == '{')
-            return true;
-        else if (ch == ']' && op == '[')
-            return true;
+        if(!stack.isEmpty()){
+            char op = stack.pop();
+
+            if (ch == ')' && op == '(')
+                return true;
+            else if (ch == '}' && op == '{')
+                return true;
+            else if (ch == ']' && op == '[')
+                return true;
+        }
 
         return false;
     }
