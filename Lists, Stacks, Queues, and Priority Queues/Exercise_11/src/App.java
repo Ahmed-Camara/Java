@@ -15,16 +15,14 @@ public class App {
         for (int i = 0; i < expression.length(); i++) {
             char ch = expression.charAt(i);
             if (ch == '(' || ch == '{' || ch == '['){
-                validity = false;
+                validity = true;
                 stack.push(ch);
             }else if(ch == ')' || ch == '}' || ch == ']' && !processStack(stack,ch)){
-/*
-                validity = processStack(stack,ch);
-                if (validity == false)
-                    break;*/
+
                 return false;
             }
         }
+        System.out.println(stack.size());
         return validity;
     }
     private static boolean processStack(Stack<Character> stack, char ch){
