@@ -5,6 +5,7 @@ public class App {
         cities.offer("Abidjan");
         cities.offer("Bouake");
         cities.offer("Yakro");
+        cities.offer("Seguela");
         System.out.println(cities); // [Abidjan, Bouake, Yakro]
 
         MyPriorityQueue<String> citiesClone = (MyPriorityQueue<String>) cities.clone();
