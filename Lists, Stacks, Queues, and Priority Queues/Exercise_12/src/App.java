@@ -6,15 +6,16 @@ public class App {
         cities.offer("Bouake");
         cities.offer("Yakro");
         cities.offer("Seguela");
-        System.out.println(cities); // [Abidjan, Bouake, Yakro]
+        cities.offer("Divo");
+        System.out.println(cities); // [Abidjan, Bouake, Yakro,Seguela,Divo]
 
         MyPriorityQueue<String> citiesClone = (MyPriorityQueue<String>) cities.clone();
-        System.out.println(citiesClone); // [Abidjan, Bouake, Yakro]
+        System.out.println(citiesClone); // [Abidjan, Bouake, Yakro,Seguela,Divo]
 
         cities.offer("Odienne");
         citiesClone.offer("Bouafle");
 
-        System.out.println(cities); // [Abidjan, Bouake, Yakro,Odienne]
-        System.out.println(citiesClone); // [Abidjan, Bouake, Yakro,Bouafle]
+        System.out.println(cities); // [Abidjan, Bouake, Yakro,,Seguela,Divo,Odienne]
+        System.out.println(citiesClone); // [Abidjan, Bouake, Yakro,,Seguela,Divo,Bouafle]
     }
 }
