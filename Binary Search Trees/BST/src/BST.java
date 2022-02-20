@@ -1,3 +1,6 @@
+import javax.swing.tree.TreeCellRenderer;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class BST<E extends Comparable<E>> extends AbstractTree<E>{
     protected TreeNode<E> root;
@@ -46,14 +49,84 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
                     parent.right = createNewNode(e);
             }
 
-            size++;
-            return true;
+
         }
+        size++;
+        return true;
+    }
+    @Override
+    public void inorder(){
+        inorder(root);
+    }
+    protected void inorder(TreeNode<E> root){
+        if(root == null) return;
+        inorder(root.left);
+        System.out.print(root.element+" ");
+        inorder(root.right);
+    }
+    @Override
+    public void postorder(){
+        postorder(root);
+    }
+    protected void postorder(TreeNode<E> root){
+        if(root == null) return;
+        System.out.print(root.element+" ");
+        postorder(root.left);
+        postorder(root.right);
+    }
+
+    @Override
+    public void preorder(){
+        preorder(root);
+    }
+
+    protected void preorder(TreeNode<E> root){
+        if(root == null) return;
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.element+" ");
     }
     protected TreeNode<E> createNewNode(E e){
         return new TreeNode<>(e);
     }
 
+    @Override
+    public int getSize(){
+        return size;
+    }
+
+    public TreeNode<E> getRoot(){
+        return root;
+    }
+
+    public ArrayList<TreeNode<E>> path(E e){
+        ArrayList<TreeNode<E>> list = new ArrayList<>();
+        TreeNode<E> current = root;
+
+        while (current != null){
+            list.add(current);
+            if(e.compareTo(current.element) < 0)
+                current = current.left;
+            else if(e.compareTo(current.element) > 0)
+                current = current.right;
+            else
+                break;
+        }
+
+        return list;
+    }
+
+    @Override
+    public boolean delete(E e){
+        TreeNode<E> parent = null;
+        TreeNode<E> current = root;
+        return false;
+    }
+
+    @Override
+    public Iterator<E> iterator(){
+        return null;
+    }
     public static class TreeNode <E extends Comparable<E>>{
         protected E element;
         protected TreeNode<E> left;
