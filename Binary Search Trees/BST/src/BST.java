@@ -43,13 +43,13 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
                     return false;
                 }
 
-                if(e.compareTo(parent.element) < 0)
-                    parent.left = createNewNode(e);
-                else
-                    parent.right = createNewNode(e);
+
             }
 
-
+            if(e.compareTo(parent.element) < 0)
+                parent.left = createNewNode(e);
+            else
+                parent.right = createNewNode(e);
         }
         size++;
         return true;
