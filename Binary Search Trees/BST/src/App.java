@@ -10,6 +10,7 @@ public class App {
         tree.insert(107);
         tree.insert(59);
         tree.insert(101);
+        tree.insert(108);
         tree.inorder();
        // System.out.println(tree.search(1001));
     }
