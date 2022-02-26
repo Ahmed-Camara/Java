@@ -119,7 +119,7 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
 
     @Override
     public boolean delete(E e){
-        if(search(e) == false){
+        if(!search(e)){
             return false;
         }
 
@@ -179,6 +179,18 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
     public Iterator<E> iterator(){
         return new InorderIterator();
     }
+
+    public static class TreeNode <E extends Comparable<E>>{
+        protected E element;
+        protected TreeNode<E> left;
+        protected TreeNode<E> right;
+
+        public TreeNode(E e){
+            element = e;
+        }
+    }
+
+
     private class InorderIterator<E> implements Iterator<E>{
         private ArrayList<E> list = new ArrayList<>();
         private int current = 0;
@@ -217,17 +229,7 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
 
         public void clear(){
             root = null;
-
             size = 0;
-        }
-    }
-    public static class TreeNode <E extends Comparable<E>>{
-        protected E element;
-        protected TreeNode<E> left;
-        protected TreeNode<E> right;
-
-        public TreeNode(E e){
-            element = e;
         }
     }
 }
