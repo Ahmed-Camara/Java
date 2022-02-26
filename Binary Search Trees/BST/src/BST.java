@@ -128,15 +128,49 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
 
         while(current != null){
 
-            if(e.compareTo(current.element) > 0){
+            if(e.compareTo(current.element) < 0){
                parent = current;
-               current = current.right;
+               current = current.left;
+            }else if(e.compareTo(current.element) > 0){
+                parent = current;
+                current = current.right;
+            }else{
+                break;
+            }
 
+            if(current == null)
+                return false;
 
+            if(current.left == null){
+                if(parent == null){
+                    root = current.right;
+                }else{
+                    if(e.compareTo(parent.element) < 0){
+                        parent.left = current.right;
+                    }else{
+                        parent.right = current.right;
+                    }
+                }
+            }else{
+
+                TreeNode<E> parentOfRighmost = current;
+                TreeNode<E> rightMost = current.left;
+
+                while (rightMost.right != null){
+                    parentOfRighmost = rightMost;
+                    rightMost = rightMost.right;
+                }
+
+                current.element = rightMost.element;
+
+                if(parentOfRighmost.right == rightMost)
+                    parentOfRighmost.right = rightMost.right;
+                else
+                    parentOfRighmost.left = rightMost.left;
             }
         }
         size--;
-        return false;
+        return true;
     }
 
     @Override
