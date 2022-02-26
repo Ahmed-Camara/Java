@@ -137,45 +137,89 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
             }else{
                 break;
             }
+        }
 
-            if(current == null)
-                return false;
+        if(current == null)
+            return false;
 
-            if(current.left == null){
-                if(parent == null){
-                    root = current.right;
-                }else{
-                    if(e.compareTo(parent.element) < 0){
-                        parent.left = current.right;
-                    }else{
-                        parent.right = current.right;
-                    }
-                }
+        if(current.left == null){
+            if(parent == null){
+                root = current.right;
             }else{
-
-                TreeNode<E> parentOfRighmost = current;
-                TreeNode<E> rightMost = current.left;
-
-                while (rightMost.right != null){
-                    parentOfRighmost = rightMost;
-                    rightMost = rightMost.right;
+                if(e.compareTo(parent.element) < 0){
+                    parent.left = current.right;
+                }else{
+                    parent.right = current.right;
                 }
-
-                current.element = rightMost.element;
-
-                if(parentOfRighmost.right == rightMost)
-                    parentOfRighmost.right = rightMost.right;
-                else
-                    parentOfRighmost.left = rightMost.left;
             }
+        }else{
+
+            TreeNode<E> parentOfRighmost = current;
+            TreeNode<E> rightMost = current.left;
+
+            while (rightMost.right != null){
+                parentOfRighmost = rightMost;
+                rightMost = rightMost.right;
+            }
+
+            current.element = rightMost.element;
+
+            if(parentOfRighmost.right == rightMost)
+                parentOfRighmost.right = rightMost.right;
+            else
+                parentOfRighmost.left = rightMost.left;
         }
         size--;
         return true;
     }
 
+
+
     @Override
     public Iterator<E> iterator(){
-        return null;
+        return new InorderIterator();
+    }
+    private class InorderIterator<E> implements Iterator<E>{
+        private ArrayList<E> list = new ArrayList<>();
+        private int current = 0;
+
+        public InorderIterator(){
+            inorder();
+        }
+        private void inorder(){
+            inorder(root);
+        }
+        private void inorder(TreeNode<E> root){
+            if(root == null)
+                return;
+            inorder(root.left);
+            list.add(root.element);
+            inorder(root.right);
+        }
+
+        @Override
+        public boolean hasNext(){
+            if(current < list.size()){
+                return true;
+            }
+            return false;
+        }
+        @Override
+        public E next(){
+            return list.get(current++);
+        }
+        @Override
+        public void remove(){
+            delete(list.get(current));
+            list.clear();
+            inorder();
+        }
+
+        public void clear(){
+            root = null;
+
+            size = 0;
+        }
     }
     public static class TreeNode <E extends Comparable<E>>{
         protected E element;
