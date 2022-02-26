@@ -23,6 +23,8 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
         return false;
     }
 
+
+
     @Override
     public boolean insert(E e){
         if(root == null){
@@ -117,8 +119,23 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
 
     @Override
     public boolean delete(E e){
+        if(search(e) == false){
+            return false;
+        }
+
         TreeNode<E> parent = null;
         TreeNode<E> current = root;
+
+        while(current != null){
+
+            if(e.compareTo(current.element) > 0){
+               parent = current;
+               current = current.right;
+
+
+            }
+        }
+        size--;
         return false;
     }
 
