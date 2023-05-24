@@ -30,7 +30,7 @@ public class Main {
 		for(int i = 0; i < len; i++) {
 			
 			if(arr[i] > average) {
-				countAboveAvg ++;
+				countAboveAvg++;
 			}else {
 				
 				countBelowAvg++;
