@@ -14,6 +14,7 @@ public class Main {
 		map.put("Liberia", "Monrovia");
 		map.put("Guinee", "Conakry");
 		
+		
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter a state : ");
 		String state = input.nextLine();
