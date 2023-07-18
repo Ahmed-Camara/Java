@@ -8,9 +8,7 @@ public class Main {
 
 	public static void main(String[] args)throws Exception {
 		
-		String path = "C:\\Users\\SYNAPSE_DEV3\\Documents\\text.txt";
-		//File file = new File(args[0]);
-		File file = new File(path);
+		File file = new File(args[0]);
 		if(file.exists()) {
 			
 			Map<String, Integer> map = new TreeMap<>();
@@ -35,14 +33,18 @@ public class Main {
 					}
 					
 				}
+				
+				
 			}
-			
 			
 			// Display the contents of map
 			Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
-			
+						
 			for(Map.Entry<String, Integer> entry : entrySet)
 				System.out.println(entry.getKey()+"\t"+entry.getValue());
+			
+		}else {
+			System.out.println("Specify the location of the file");
 		}
 	}
 
