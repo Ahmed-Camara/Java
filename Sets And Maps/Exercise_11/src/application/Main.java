@@ -67,14 +67,11 @@ public class Main extends Application {
 	}
 	
 	private BorderPane getPane() {
-		// Add items to cboYear
 		for (int i = 2001; i <= 2010; i++)
 			cboYear.getItems().add(i + "");
 
-		// Add items to cboGender
 		cboGender.getItems().addAll("Male", "Female");	
 		
-		// Create a grid pane
 		GridPane gridPane = new GridPane();
 		gridPane.setVgap(5);
 		gridPane.setPadding(new Insets(5, 0, 5, 0));
@@ -87,7 +84,6 @@ public class Main extends Application {
 		gridPane.add(tfName, 1, 2);
 		gridPane.add(btFindRanking, 1, 3);
 
-		// Create a border pane and place node in it
 		BorderPane pane = new BorderPane();
 		pane.setCenter(gridPane);
 		pane.setBottom(lblResults);
@@ -100,13 +96,11 @@ public class Main extends Application {
 
 		for (int year = 2001, i = 0; year <= 2010 && i < 10; year++, i++) {
 			Map<String, String> map = new HashMap<>();
-			// Read data from url
 			try {
 				java.net.URL url = new java.net.URL(
 				"http://www.cs.armstrong.edu/liang/data/babynamesranking" 
 					+ year + ".txt");
 	
-				// Create input file from url
 				Scanner input = new Scanner(url.openStream());
 				while (input.hasNext()) {
 					ArrayList<String> list = new ArrayList<>();
