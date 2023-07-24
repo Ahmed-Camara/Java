@@ -27,6 +27,7 @@ public class MyArrayList <E> extends MyAbstractList<E>{
 		size++;
 	}
 	
+	
 	private void ensureCapacity() {
 		
 		if(size >= data.length) {
