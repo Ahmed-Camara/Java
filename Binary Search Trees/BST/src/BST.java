@@ -136,7 +136,51 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
 
     @Override
     public boolean delete(E e) {
-        return false;
+
+        TreeNode<E> parent = null;
+        TreeNode<E> current = root;
+
+        while(current != null){
+            if(e.compareTo(current.element) < 0){
+                parent = current;
+                current = current.left;
+            }else if(e.compareTo(current.element) > 0){
+                parent = current;
+                current = current.right;
+            }else break;
+        }
+
+        if(current == null) return false;
+
+        if(current.left == null){
+            if(parent == null){
+                root = current.right;
+            }else{
+
+                if(e.compareTo(parent.element) < 0)
+                    parent.left = current.right;
+                else
+                    parent.right = current.right;
+            }
+        }else{
+            TreeNode<E> parentOfRightMost = current;
+            TreeNode<E> rightMost = current.left;
+
+            while(rightMost.right != null){
+                parentOfRightMost = rightMost;
+                rightMost = rightMost.right;
+            }
+
+            current.element = rightMost.element;
+
+            if(parentOfRightMost.right == rightMost)
+                parentOfRightMost.right = rightMost.left;
+            else
+                parentOfRightMost.left = rightMost.left;
+        }
+
+        size--;
+        return true;
     }
 
     @Override
@@ -145,18 +189,52 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
     }
     @Override
     public Iterator<E> iterator() {
-        //return new InorderIterator();
-        return null;
+        return new InorderIterator();
     }
 
-    /*private class InorderIterator implements Iterator<E>{
+    private class InorderIterator implements Iterator<E>{
         private ArrayList<E> list = new ArrayList<>();
         private int current = 0;
 
-        public InorderIterator(){}
+        public InorderIterator(){
+            inorder();
+        }
 
         private void inorder(){
             inorder(root);
         }
-    }*/
+
+        private void inorder(TreeNode<E> root){
+            if(root == null) return;
+
+            inorder(root.left);
+            list.add(root.element);
+            inorder(root.right);
+        }
+
+        @Override
+        public boolean hasNext(){
+
+            if(current < list.size())
+                return true;
+
+            return false;
+        }
+
+        @Override
+        public E next(){
+            return list.get(current++);
+        }
+
+        @Override
+        public void remove(){
+            delete(list.get(current));
+            list.clear();
+            inorder();
+        }
+
+        public void clear(){
+            root = null; size = 0;
+        }
+    }
 }
